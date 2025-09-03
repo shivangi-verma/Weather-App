@@ -3,45 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>Weather App</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Animate gradient */
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .animated-bg {
+        background: linear-gradient(270deg, #06b6d4, #3b82f6, #9333ea, #f43f5e);
+        background-size: 800% 800%;
+        animation: gradientShift 15s ease infinite;
+      }
+    </style>
   </head>
-  <body>
-    <div class="container font-mono bg-gray-300">
-      <div class="cardHeader m-6">
-        <h1 class="text-center text-3xl font-black">Weather App ☁️</h1>
+  <body class="animated-bg min-h-screen flex justify-center items-center font-mono">
+    <div class="max-w-md w-full bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl p-6">
+      <!-- Header -->
+      <div class="mb-6 text-center">
+        <h1 class="text-4xl font-extrabold text-white drop-shadow-lg">Weather App ☁️</h1>
       </div>
-      <div class="cardBody m-6">
-        <div id="formWeather" class="flex justify-center m-4">
-          <input
-            id="inputField"
-            type="text"
-            placeholder="Enter City Name"
-            class="rounded-lg border-2 border-dashed p-2 mx-2 bg-gray-100"
-          />
-          <button
-            id="btn"
-            onclick="btnHandler()"
-            class="m-auto mx-2 p-2 border-2 border-blue-500 bg-blue-300 rounded-lg"
-          >
-            Get Weather
-          </button>
-        </div>
-        <div class="flex-col text-center m-4" id="details">
-         <img id="icon" class="p-2 text-center" src="" alt="">
-          <h2 class="p-2 font-black text-3xl" id="temp">Temp in C</h2>
-          <h2 class="p-2" id="weather">Weather </h2>
-          <h2 class="p-2" id="cloud">Cloud ☁️</h2>
-          <h2 class="p-2" id="humidity">humidity 💧</h2>
-          <h3 class="p-2" id="country">Country</h3>
-          <p class="p-2" id="lat">Latitude</p>
-          <p class="p-2" id="lon">longitude</p>
-        </div>
-      </div>
-      <div class="cardFooter"></div>
-    </div>
 
-    <script src="script.js"></script>
+      <!-- Form -->
+      <div class="flex justify-center mb-6">
+        <input
+          id="inputField"
+          type="text"
+          placeholder="Enter City Name"
+          class="rounded-lg p-2 w-2/3 bg-white/80 border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+        />
+        <button
+          onclick="btnHandler()"
+          class="ml-3 px-4 py-2 bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-600 transition"
+        >
+          Get
+        </button>
+      </div>
+
+      <!-- Weather Details -->
+      <div class="flex flex-col items-center text-center space-y-3 bg-white/30 p-4 rounded-lg shadow-inner">
+        <img id="icon" class="" src="" alt=" ">
+        <h2 id="temp" class="text-2xl font-bold text-white">Temp in °C</h2>
+        <h2 id="weather" class="text-lg text-white">Weather</h2>
+        <h2 id="cloud" class="text-lg text-white">Cloud ☁️</h2>
+        <h2 id="humidity" class="text-lg text-white">Humidity 💧</h2>
+        <h3 id="country" class="text-lg text-white">Country</h3>
+        <p id="lat" class="text-sm text-white">Latitude</p>
+        <p id="lon" class="text-sm text-white">Longitude</p>
+      </div>
+    </div>
+<script src="script.js"></script>
   </body>
 </html>
