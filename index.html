@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="container font-mono bg-gray-300">
+      <div class="cardHeader m-6">
+        <h1 class="text-center text-3xl font-black">Weather App ☁️</h1>
+      </div>
+      <div class="cardBody m-6">
+        <div id="formWeather" class="flex justify-center m-4">
+          <input
+            id="inputField"
+            type="text"
+            placeholder="Enter City Name"
+            class="rounded-lg border-2 border-dashed p-2 mx-2 bg-gray-100"
+          />
+          <button
+            id="btn"
+            onclick="btnHandler()"
+            class="m-auto mx-2 p-2 border-2 border-blue-500 bg-blue-300 rounded-lg"
+          >
+            Get Weather
+          </button>
+        </div>
+        <div class="flex-col text-center m-4" id="details">
+         <img id="icon" class="p-2 text-center" src="" alt="">
+          <h2 class="p-2 font-black text-3xl" id="temp">Temp in C</h2>
+          <h2 class="p-2" id="weather">Weather </h2>
+          <h2 class="p-2" id="cloud">Cloud ☁️</h2>
+          <h2 class="p-2" id="humidity">humidity 💧</h2>
+          <h3 class="p-2" id="country">Country</h3>
+          <p class="p-2" id="lat">Latitude</p>
+          <p class="p-2" id="lon">longitude</p>
+        </div>
+      </div>
+      <div class="cardFooter"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
