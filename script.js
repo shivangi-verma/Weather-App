@@ -17,7 +17,6 @@ async function btnHandler() {
     const temp = document.getElementById("temp");
     temp.innerHTML = `Temperature : ${data.current.temp_c} °C`;
 
-    
     const weather = document.getElementById("weather");
     weather.innerHTML = `${data.current.condition.text}`;
 
@@ -35,8 +34,6 @@ async function btnHandler() {
 
     const lon = document.getElementById("lon");
     lon.innerHTML = `Longitude : ${data.location.lon} `;
-
-    
   } catch (error) {
     console.log("error");
   }
