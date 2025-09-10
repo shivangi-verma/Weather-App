@@ -7,8 +7,9 @@ Users can search for any city and instantly get the current weather, temperature
 
 ![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=shivangi-verma.Weather-App)
 
----
+<img width="1012" height="1131" alt="image" src="https://github.com/user-attachments/assets/ca742cea-10c7-40a3-b853-9c6b6bebb172" />
 
+---
 ## 🚀 Features
 - 🔍 Search weather by city name
 - 🌡️ Displays current temperature in °C
